@@ -1,0 +1,16 @@
+
+{
+  "expo": {
+    "name": "Ponto Vivo",
+    "slug": "ponto-vivo",
+    "scheme": "pontovivo",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "backgroundColor": "#F4F7F6",
+    "ios": {
+      "supportsTablet": true
+    },
+    "plugins": []
+  }
+}

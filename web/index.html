@@ -1,0 +1,199 @@
+
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#087C69">
+  <title>Ponto Vivo | Painel de gestão</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <a href="#conteudo" class="skip">Pular para conteúdo</a>
+
+  <header class="top">
+    <div class="wrap top-inner">
+      <a class="brand" href="#conteudo" aria-label="Ponto Vivo início">
+        <img src="logopontovivo.png" alt="Ponto Vivo" class="brand-logo">
+        <small>PAINEL DE GESTÃO</small>
+      </a>
+
+      <div class="user">
+        <span id="who">Acesso de demonstração</span>
+        <button id="logout" class="textbtn" hidden>Sair</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="conteudo" class="wrap">
+
+    <section class="hero">
+      <div>
+        <p class="eyebrow">CITIZENTECH · MOBILIDADE</p>
+        <h1>Uma cidade melhor começa com escuta.</h1>
+        <p>
+          Gerencie problemas relatados em pontos de ônibus.
+          Cada atualização aqui aparece também no aplicativo
+          do cidadão.
+        </p>
+      </div>
+
+      <div class="hero-icon" aria-hidden="true">◎</div>
+    </section>
+
+    <!-- LOGIN E ILUSTRAÇÃO -->
+    <div class="login-layout" id="login-layout">
+
+      <section
+        id="login-panel"
+        class="auth-card"
+        aria-labelledby="login-title"
+      >
+        <h2 id="login-title">Acesso da gestão</h2>
+
+        <p>
+          Entre com a conta administrativa cadastrada
+          no Supabase para atualizar ocorrências.
+        </p>
+
+        <form id="login-form">
+          <label for="email">E-mail</label>
+          <input
+            id="email"
+            type="email"
+            autocomplete="username"
+            required
+            placeholder="admin@exemplo.com"
+          >
+
+          <label for="password">Senha</label>
+          <input
+            id="password"
+            type="password"
+            autocomplete="current-password"
+            required
+            minlength="6"
+            placeholder="Sua senha"
+          >
+
+          <button type="submit" class="primary" id="login-btn">
+            Entrar no painel
+          </button>
+        </form>
+
+        <p
+          id="login-error"
+          class="error"
+          role="alert"
+          aria-live="polite"
+        ></p>
+
+        <p class="hint">
+          Sem credenciais? O painel fica disponível apenas
+          para leitura pública; alterações exigem permissão.
+        </p>
+      </section>
+
+      <!-- ILUSTRAÇÃO ANIMADA -->
+      
+<div class="login-visual" aria-hidden="true">
+  <img
+    src="paisagem.png"
+    class="scene-background"
+    alt=""
+  >
+
+  <div class="robot-layer">
+    <img
+      src="robo.png"
+      class="robot-image"
+      alt=""
+    >
+
+    <div class="hand-pulse">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</div>
+
+
+    </div>
+
+    <!-- PAINEL -->
+    <section id="dashboard" aria-labelledby="dash-title">
+
+      <div class="heading">
+        <div>
+          <p class="eyebrow">VISÃO GERAL</p>
+          <h2 id="dash-title">Ocorrências registradas</h2>
+          <p>
+            Registros enviados pelo aplicativo,
+            com atualização periódica.
+          </p>
+        </div>
+
+        <button id="refresh" class="outline">↻ Atualizar</button>
+      </div>
+
+      <div class="stats">
+        <div class="stat">
+          <span>Total</span>
+          <strong id="total">—</strong>
+        </div>
+
+        <div class="stat">
+          <span>Pendentes</span>
+          <strong id="pending">—</strong>
+        </div>
+
+        <div class="stat">
+          <span>Em análise</span>
+          <strong id="progress">—</strong>
+        </div>
+
+        <div class="stat">
+          <span>Resolvidos</span>
+          <strong id="resolved">—</strong>
+        </div>
+      </div>
+
+      <div class="toolbar">
+        <label for="filter">Filtrar por status</label>
+
+        <select id="filter">
+          <option value="">Todos</option>
+          <option>Pendente</option>
+          <option>Em análise</option>
+          <option>Resolvido</option>
+        </select>
+
+        <span id="sync" role="status" aria-live="polite">
+          Carregando...
+        </span>
+      </div>
+
+      <div id="list" class="list" aria-live="polite"></div>
+
+      <p class="hint">
+        Painel demonstrativo acadêmico.
+        Os registros enviados podem ser vistos publicamente;
+        evite inserir dados pessoais.
+      </p>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="wrap">
+      Ponto Vivo · Global Solution CitizenTech · FIAP · 2026
+    </div>
+  </footer>
+
+  <script src="config.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="app.js" defer></script>
+</body>
+</html>

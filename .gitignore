@@ -1,0 +1,19 @@
+# Dependências
+node_modules/
+**/node_modules/
+
+# Arquivos temporários do Expo
+.expo/
+**/.expo/
+
+# Variáveis de ambiente
+.env
+.env.*
+!.env.example
+
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
