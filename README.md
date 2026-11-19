@@ -1,5 +1,5 @@
 
-# Ponto Vivo — Global Solution CitizenTech 2026
+# Ponto Vivo - Global Solution CitizenTech 2026
 
 O **Ponto Vivo** é uma solução digital de participação cidadã desenvolvida para a Global Solution 2026 da FIAP, no curso de Web Design.
 
@@ -7,17 +7,17 @@ O projeto é composto por um aplicativo mobile e um painel de gestão web integr
 
 A proposta busca tornar os problemas urbanos mais visíveis, facilitar o registro de relatos pela população e oferecer um fluxo transparente de acompanhamento.
 
-**Status do projeto:** MVP acadêmico funcional, com integração entre as plataformas implementada e testada em ambiente de desenvolvimento.
+**Status do projeto:** MVP acadêmico funcional, com integração implementada e testada em ambiente de desenvolvimento e painel web publicado e validado na Vercel.
 
 O Ponto Vivo não é um canal oficial de atendimento de prefeituras ou órgãos públicos.
 
 ## 1. Integrantes
 
-- [PREENCHER: nome completo — RM]
+- Matheus do Nascimento Francisco - RM:562553
 - Curso: Web Design
 - Instituição: FIAP
 - Período: 2º semestre de 2026
-- Projeto: Global Solution — CitizenTech
+- Projeto: Global Solution - CitizenTech
 
 ## 2. Problema e proposta
 
@@ -97,22 +97,22 @@ O status inicial de novos registros é `Pendente`.
 - Supabase Authentication
 - Row Level Security (RLS)
 
-### Desenvolvimento
+### Desenvolvimento e publicação
 
 - Visual Studio Code
 - Node.js
 - npm
 - Git e GitHub
+- Vercel
 
-**Hospedagem prevista:** Vercel para o painel web.
+**Hospedagem do painel web:** Vercel, com publicação concluída.
 
 ## 5. Estrutura do projeto
 
 ```text
 ponto-vivo/
 |
-|-- docs/
-|   Documentação e materiais acadêmicos
+|-- .gitignore
 |
 |-- mobile/
 |   |-- App.js
@@ -130,6 +130,7 @@ ponto-vivo/
 |   |-- schema.sql
 |
 |-- web/
+|   |-- .gitignore
 |   |-- index.html
 |   |-- style.css
 |   |-- app.js
@@ -141,9 +142,11 @@ ponto-vivo/
 |-- README.md
 ```
 
-As pastas `node_modules/` e `.expo/` contêm arquivos locais ou gerados durante o desenvolvimento e não precisam ser versionadas.
+As pastas `node_modules/` e `.expo/` contêm arquivos locais ou gerados durante o desenvolvimento e não são versionadas.
 
-O arquivo `mobile/.env` contém a configuração local do Supabase e não deve ser enviado ao repositório.
+O arquivo `mobile/.env` contém a configuração local do Supabase e está excluído do Git por meio do `.gitignore`.
+
+A estrutura apresentada inclui os arquivos locais necessários ao desenvolvimento. Alguns deles não aparecem no repositório público porque são ignorados pelo Git.
 
 ## 6. Arquitetura e integração
 
@@ -182,6 +185,8 @@ A solução utiliza políticas de Row Level Security (RLS).
 A autenticação administrativa é realizada pelo Supabase Authentication.
 
 ## 7. Configuração do Supabase
+
+Esta seção documenta a configuração técnica e orienta desenvolvedores ou avaliadores que desejem reproduzir o projeto em seu próprio ambiente. Não representa uma etapa pendente da implementação atual.
 
 ### 7.1. Criar o projeto
 
@@ -228,6 +233,8 @@ A publicação de uma chave pública não elimina a necessidade de configurar co
 
 ## 8. Executar o aplicativo mobile
 
+As instruções desta seção destinam-se a pessoas que desejam executar o projeto localmente.
+
 ### Pré-requisitos
 
 - Node.js instalado.
@@ -260,7 +267,7 @@ EXPO_PUBLIC_SUPABASE_ANON_KEY=SUA_CHAVE_PUBLICA
 
 Substitua os valores de exemplo pelas credenciais públicas do seu projeto.
 
-Não compartilhe o arquivo `.env` com credenciais privadas ou informações sensíveis.
+Não compartilhe arquivos com credenciais privadas ou informações sensíveis.
 
 ### Iniciar o aplicativo
 
@@ -284,7 +291,17 @@ npx expo start
 
 O funcionamento nativo em dispositivos Android e iOS ainda depende de validação específica em ambiente compatível.
 
+O enunciado da Global Solution exige o código funcional do aplicativo mobile no GitHub, mas não determina a publicação obrigatória de um link público separado para o aplicativo.
+
 ## 9. Executar o painel web
+
+O painel web encontra-se publicado e pode ser acessado diretamente:
+
+https://ponto-vivo-web.vercel.app/
+
+Para executar uma cópia localmente, siga as instruções abaixo.
+
+### Servidor local
 
 Acesse a pasta `web`:
 
@@ -293,17 +310,6 @@ cd web
 ```
 
 O painel utiliza HTML, CSS e JavaScript e não necessita de um processo de compilação.
-
-### Configuração
-
-No arquivo `web/config.js`, configure:
-
-- URL do projeto Supabase.
-- Chave pública do projeto.
-
-As informações devem corresponder ao mesmo projeto utilizado no aplicativo mobile.
-
-### Servidor local
 
 Execute:
 
@@ -315,27 +321,55 @@ Abra o endereço exibido no terminal, geralmente:
 
 `http://localhost:3000`
 
+### Configuração
+
+No arquivo `web/config.js`, configure:
+
+- URL do projeto Supabase.
+- Chave pública do projeto.
+
+As informações devem corresponder ao mesmo projeto utilizado no aplicativo mobile.
+
 O painel poderá consultar as ocorrências cadastradas no Supabase.
 
 Para atualizar o status de um registro, será necessário autenticar-se com uma conta administrativa autorizada.
 
 ## 10. Publicação do painel web
 
-A plataforma web foi preparada para hospedagem estática.
+A plataforma web foi publicada na Vercel por meio da integração com o repositório GitHub.
 
-A publicação está prevista na Vercel.
+**Endereço público:**
 
-Configuração sugerida:
+https://ponto-vivo-web.vercel.app/
 
-1. Enviar o código do projeto ao GitHub.
-2. Criar um projeto na Vercel.
-3. Importar o repositório.
-4. Definir `web` como Root Directory.
-5. Selecionar o framework `Other`.
-6. Publicar a aplicação.
-7. Validar as consultas e a autenticação no endereço público.
+**Repositório:**
 
-Antes da publicação, revisar o arquivo `web/config.js` e confirmar que contém apenas a chave pública apropriada.
+https://github.com/matheusnfran/ponto-vivo
+
+### Configuração utilizada
+
+- Plataforma: Vercel.
+- Nome do projeto: `ponto-vivo-web`.
+- Repositório GitHub: `matheusnfran/ponto-vivo`.
+- Branch de publicação: `master`.
+- Root Directory: `web`.
+- Application Preset: `Other`.
+- Hospedagem: estática.
+
+O diretório `web` foi selecionado para publicar somente a interface de gestão, mantendo o aplicativo React Native e os arquivos SQL no mesmo repositório GitHub.
+
+### Validação após a publicação
+
+Após o deploy, foram verificados:
+
+- Carregamento da página pública.
+- Exibição correta da identidade visual e das imagens.
+- Consulta de ocorrências armazenadas no Supabase.
+- Exibição de um registro cadastrado anteriormente pelo aplicativo.
+- Login com conta administrativa.
+- Disponibilidade e funcionamento das operações administrativas.
+
+Esses testes confirmaram o funcionamento do painel web publicado e sua conexão com o Supabase.
 
 ## 11. Testes de integração realizados
 
@@ -353,7 +387,17 @@ Durante o desenvolvimento, foi realizado um teste funcional do fluxo entre as du
 
 Esse teste confirmou o funcionamento básico da integração entre aplicativo, painel e banco de dados.
 
-A publicação e os testes finais em ambiente hospedado permanecem como etapas de validação da entrega.
+### Testes em ambiente publicado
+
+Após a publicação do painel web na Vercel, também foram confirmados:
+
+- Acesso público à aplicação.
+- Consulta aos registros do Supabase.
+- Apresentação do status atualizado.
+- Autenticação administrativa.
+- Funcionamento dos controles de gestão.
+
+O aplicativo mobile foi testado por meio do Expo Web em ambiente local. Os testes nativos em Android e iOS ainda não foram concluídos.
 
 ## 12. Design, UX/UI e acessibilidade
 
@@ -405,7 +449,7 @@ No mobile:
 
 - Microinterações nos cards.
 - Feedback visual ao pressionar elementos.
-- Transições de estado e carregamento.
+- Estados de carregamento e confirmação.
 
 As microinterações animadas dos cards respeitam a preferência do dispositivo por movimento reduzido.
 
@@ -496,23 +540,23 @@ Não devem ser apresentados dados fictícios como resultados de pesquisa real.
 - Código-fonte do painel web.
 - Estrutura SQL e políticas de acesso.
 - Documentação técnica e acadêmica.
-- Repositório GitHub.
-- Plataforma web publicada.
+- Repositório público no GitHub.
+- Plataforma web publicada na Vercel.
 - Vídeo-pitch de demonstração.
 
 ### Links
 
-**Repositório GitHub:** [PREENCHER]
+**Repositório GitHub:** https://github.com/matheusnfran/ponto-vivo
 
-**Plataforma web:** [PREENCHER]
+**Plataforma web:** https://ponto-vivo-web.vercel.app/
 
-**Vídeo-pitch (2 a 3 minutos):** [PREENCHER]
+**Vídeo-pitch (2 a 3 minutos):** [PREENCHER APÓS GRAVAÇÃO]
 
 ## 18. Checklist final
 
-### Funcionalidades verificadas
+### Funcionalidades e entregas verificadas
 
-- [x] Aplicativo inicia e permite navegar pelas telas.
+- [x] Aplicativo inicia e permite navegar pelas telas no Expo Web.
 - [x] Aplicativo consulta ocorrências do Supabase.
 - [x] Aplicativo registra novas ocorrências.
 - [x] Painel web apresenta os registros cadastrados.
@@ -520,17 +564,20 @@ Não devem ser apresentados dados fictícios como resultados de pesquisa real.
 - [x] Administrador autorizado altera o status.
 - [x] Aplicativo apresenta o status atualizado.
 - [x] Identidade visual das interfaces foi finalizada.
+- [x] Código-fonte publicado no GitHub.
+- [x] Painel web publicado na Vercel.
+- [x] Consulta ao Supabase validada na versão publicada.
+- [x] Login e funcionalidades administrativas testados na Vercel.
+- [x] Links do GitHub e da Vercel adicionados ao README.
 
 ### Pendências para a entrega
 
 - [ ] Confirmar integrantes e respectivos RMs.
 - [ ] Inserir a evidência de validação real com usuários.
-- [ ] Publicar o repositório no GitHub.
-- [ ] Publicar o painel web na Vercel.
-- [ ] Testar a versão web hospedada.
+- [ ] Realizar teste nativo do aplicativo em dispositivo compatível, se possível.
 - [ ] Produzir e disponibilizar o vídeo-pitch.
-- [ ] Preencher os links definitivos da entrega.
-- [ ] Concluir a revisão final da documentação.
+- [ ] Adicionar o link definitivo do vídeo-pitch.
+- [ ] Concluir a revisão final da documentação acadêmica.
 
 ---
 
